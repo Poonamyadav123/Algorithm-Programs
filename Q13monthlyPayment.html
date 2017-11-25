@@ -1,0 +1,31 @@
+<html>
+<body>
+<p>Q13.Function to calculate monthlyPayment</p>
+<p>Enter loan amount:  <input type="number" name="loanAmount" id="loanAmountVal" required><br></p>
+<p>Enter loan term (in years):  <input type="number" name="loanYear" id="loanYearVal" required><br></p>
+<p>Enter interest rate: <input type="number" name="loanRate" id="loanRateVal" required><br></p>
+<button onClick="pay()"> Submit </button>
+<p id="demo"></p>
+<script>
+function pay()
+{
+var loanAmount=document.getElementById("loanAmountVal").value;
+var loanRate=document.getElementById("loanRateVal").value;
+var termYear=document.getElementById("loanYearVal").value;
+
+var n=(12*termYear);//n=number of periods
+var r=(loanRate)/(2*100);//r=rate per period
+var monthlyPayment ;
+monthlyPayment =(loanAmount*r)/(1-Math.pow(1+r, -n));
+
+
+document.getElementById("demo").innerHTML="Monthly Payment:"+monthlyPayment+" .Rs";
+
+
+}
+
+</script>
+
+</body>
+
+</html>

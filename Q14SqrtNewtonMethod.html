@@ -1,0 +1,22 @@
+<html>
+<body>
+<p>Enter number:<input type="number" name="input" id="inputval"><br><br></p>
+<button onClick=SqrtNewtonMethod()> Submit </button>
+<p id="demo"></p>
+
+<script>
+function SqrtNewtonMethod(){
+var c= document.getElementById("inputval").value;
+var t=c;
+var epsilon=1e-15; 
+var e=epsilon*t;
+//document.getElementById("demo").innerHTML=e;
+ while (Math.abs(t - c/t) > epsilon*t) {
+            t = (c/t + t) / 2;
+        }
+	document.getElementById("demo").innerHTML="Estimate of the square root of your number is "+t;
+}
+</script>
+
+</body>
+</html>

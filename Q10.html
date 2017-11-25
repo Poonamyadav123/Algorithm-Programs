@@ -1,0 +1,68 @@
+<html>
+
+<body>
+<p>Q15.Function to calculate decimal toBinary </p>
+<!--<p>Enter decimal number:  <input type="number" name="num" id="monval"><br></p>-->
+<button onClick=chk()> Submit </button>
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+
+function chk(){
+var note= ["1000","500","100","50","10","5","2","1"];
+var arrpos=[0,0,0,0,0,0,0,0]
+var total=0;
+var count=0;
+//var mon=document.getElementById("monval").value;
+//console.log(money);
+money=250;
+
+//var target=100;
+		if(money==0)
+		{
+			return 0;
+		}else
+		{
+				var i=0;
+	
+			while(money>0)
+			{
+				if(money>=note[i])
+				{
+	
+
+				money=money-note[i];
+				//money=total;
+					arrpos[i]++;
+	
+				}
+				else{i++;}
+				console.log(arrpos);
+	
+				
+			}
+			for(var j=0;j<note.length;j++)
+				{
+				if(arrpos[j]>0)
+				document.getElementById("demo").innerHTML+=note[j]+" notes:"+arrpos[j]+"   <br> ";
+	
+	
+				}
+
+
+		}
+
+
+
+
+
+}
+
+
+
+
+</script>
+</body>
+
+
+</html>
